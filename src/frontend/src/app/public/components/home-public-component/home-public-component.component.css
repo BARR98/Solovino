@@ -1,0 +1,92 @@
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.main-section {
+    width: 60%;
+    height: fit-content;
+    overflow: scroll;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.content-item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: start;
+    font-size: 16px;
+}
+
+.content-item-title {
+    margin-right: 5px;
+    color: #00afb9;
+    font-weight: bold;
+}
+
+.content-item-info {}
+
+.header-content {
+    height: 40px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    background-color: #e29578;
+    font-weight: bold;
+    font-size: medium;
+    align-items: center;
+    border-radius: 5px;
+    color: #fcfcfc;
+    font-weight: bold;
+}
+
+.dog-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+img {
+    height: 120px;
+    width: 120px;
+}
+
+mat-card {
+    width: 50%;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.main-section-title {
+    width: 100%;
+    height: 55px;
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #006d77;
+    color: #edf6f9;
+}
+
+.main-section-subtitle {
+    width: 100%;
+    height: 55px;
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #f07167;
+    color: #edf6f9;
+}

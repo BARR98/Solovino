@@ -1,0 +1,209 @@
+<div class="main">
+    <mat-card class="mat-elevation-z4">
+        <mat-card-header>
+            <div class="header-content">
+                {{post["nombre_mascota"]}}
+            </div>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="dog-image">
+                <img src="../../../../assets/images/dog.png" alt="">
+            </div>
+            <div class="content-item">
+                <div class="content-item-title">
+                    Descripción:
+                </div>
+                <div class="content-item-info">
+                    {{post["descripcion_mascota"]}}
+                </div>
+            </div>
+            <div class="content-item">
+                <div class="content-item-title">
+                    Edad:
+                </div>
+                <div class="content-item-info">
+                    {{post["edad_mascota"]}} años
+                </div>
+
+            </div>
+            <div class="content-item">
+                <div class="content-item-title">
+                    Talla:
+                </div>
+                <div class="content-item-info">
+                    {{post["talla_mascota"]}}
+                </div>
+
+            </div>
+            <div class="content-item">
+                <div class="content-item-title">
+                    Sexo:
+                </div>
+                <div class="content-item-info">
+                    {{post["sexo_mascota"]}}
+                </div>
+
+            </div>
+            <div class="content-item">
+                <div class="content-item-title">
+                    Raza:
+                </div>
+                <div class="content-item-info">
+                    {{post["raza_mascota"]}}
+                </div>
+
+            </div>
+            <div class="content-item">
+                <div class="content-item-title">
+                    Fecha de desaparición:
+                </div>
+                <div class="content-item-info">
+                    {{post["fecha_desaparicion"]}}
+                </div>
+
+            </div>
+            <div class="content-item">
+                <div class="content-item-title">
+                    Lugar de desaparición:
+                </div>
+                <div class="content-item-info">
+                    {{post["lugar_desaparicion"]}}
+                </div>
+
+            </div>
+            <div class="content-item">
+                <div class="content-item-title">
+                    Contacto:
+                </div>
+                <div class="content-item-info">
+                    {{post["telefono"]}}
+                </div>
+
+            </div>
+            <div class="content-item">
+                <div class="content-item-title">
+                    Dueño:
+                </div>
+                <div class="content-item-info">
+                    {{post["nombre_dueño"]}}
+                </div>
+
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <div class="buttons">
+        <div class="edit">
+            <button mat-raised-button color="primary" (click)="WantEdit()">
+                <mat-icon>
+                    edit
+                </mat-icon>
+            </button>
+
+        </div>
+        <div class="delete">
+            <button mat-raised-button color="warn" (click)="deletePost()">
+                <mat-icon>
+                    delete
+                </mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <div class="form-section" *ngIf="wantEdit === true">
+        <form [formGroup]="form" (ngSubmit)="savePostUpdated()">
+            <div class="row">
+                <div class="input-section-form">
+                    <mat-label>Nombre</mat-label>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <input matInput placeholder="Nombre de la mascota" value="" formControlName="nombre_mascota" type="text">
+                    </mat-form-field>
+                </div>
+                <div class="input-section-form">
+                    <mat-label>Edad</mat-label>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <input matInput placeholder="Edad de la mascota" value="" formControlName="edad_mascota">
+                    </mat-form-field>
+                </div>
+                <div class="input-section-form">
+                    <mat-label>Dueño</mat-label>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <input matInput placeholder="Nombre del dueño" value="" formControlName="nombre_dueño">
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="input-section-form">
+                    <mat-label>Contacto</mat-label>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <input matInput placeholder="Contacto del dueño" value="" formControlName="telefono">
+                    </mat-form-field>
+                </div>
+                <div class="input-section-form">
+                    <mat-label>Fecha de desaparición:</mat-label>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <input matInput placeholder="Inserte la fecha de desaparición" value="" formControlName="fecha_desaparicion" type="date">
+                    </mat-form-field>
+                </div>
+                <div class="input-section-form">
+                    <mat-label>Lugar de desaparición:</mat-label>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <input matInput placeholder="Inserte el lugar de desaparición" value="" formControlName="lugar_desaparicion">
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="input-section-form">
+                    <mat-label>Sexo:</mat-label>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <input matInput placeholder="Sexo de la mascota" value="" formControlName="sexo_mascota">
+                    </mat-form-field>
+                </div>
+
+                <div class="input-section-form">
+                    <mat-label>Talla:</mat-label>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <input matInput placeholder="Talla de la mascota" value="" formControlName="talla_mascota">
+                    </mat-form-field>
+                </div>
+
+                <div class="input-section-form">
+                    <mat-label>Raza:</mat-label>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <input matInput placeholder="Raza de la mascota" value="" formControlName="raza_mascota">
+                    </mat-form-field>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="input-section-form">
+                    <mat-label>Descripción:</mat-label>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <textarea matInput placeholder="Descripción de la mascota" value="" formControlName="descripcion_mascota"></textarea>
+                    </mat-form-field>
+                </div>
+
+                <div class="buttons-form">
+                    <button mat-raised-button type="submit" color="primary">
+                        <span>Guardar</span>
+                        <mat-icon>save</mat-icon>
+                    </button>
+                </div>
+
+                <div class="buttons-form">
+                    <button mat-raised-button type="reset" color="warn">
+                        <span>Deshacer</span>
+                        <mat-icon>undo</mat-icon>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</div>

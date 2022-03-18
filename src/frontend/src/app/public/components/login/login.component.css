@@ -1,0 +1,43 @@
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+.main-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-card {
+    width: 50%;
+    height: 300px;
+}
+
+mat-card-header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 0px;
+    align-items: center;
+}
+
+label {
+    height: auto;
+    margin-top: 10px;
+}
+
+input {
+    height: auto;
+    width: 200px;
+    margin-top: 10px;
+}

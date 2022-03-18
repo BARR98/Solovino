@@ -1,0 +1,113 @@
+<div class="main">
+    <div class="main-section">
+        <mat-card class="mat-elevation-z4">
+            <mat-card-header>
+                <div class="header-content">
+                    {{acount["titular"]}}
+                </div>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="content-item">
+                    <div class="content-item-title">
+                        Numero de tarjeta:
+                    </div>
+                    <div class="content-item-info">
+                        {{acount["numero_tarjeta"]}}
+                    </div>
+
+                </div>
+                <div class="content-item">
+                    <div class="content-item-title">
+                        Numero cuenta:
+                    </div>
+                    <div class="content-item-info">
+                        {{acount["numero_cuenta"]}}
+                    </div>
+
+                </div>
+                <div class="content-item">
+                    <div class="content-item-title">
+                        Banco:
+                    </div>
+                    <div class="content-item-info">
+                        {{acount["banco"]}}
+                    </div>
+
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <div class="buttons">
+            <div class="edit">
+                <button mat-raised-button color="primary" (click)="WantEdit()">
+                    <mat-icon>
+                        edit
+                    </mat-icon>
+                </button>
+
+            </div>
+            <div class="delete">
+                <button mat-raised-button color="warn" (click)="DeleteAcount()">
+                    <mat-icon>
+                        delete
+                    </mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="info-edit-section" *ngIf="wantEdit === true">
+            <form [formGroup]="form" (ngSubmit)="SaveUpdatedAcount()">
+                <div class="row">
+                    <div class="input-section-form">
+                        <mat-label>Titular:</mat-label>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <input matInput placeholder="Nombre del titular" value="" formControlName="titular" type="text">
+                        </mat-form-field>
+                    </div>
+                    <div class="input-section-form">
+                        <mat-label>Número tarjeta:</mat-label>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <input matInput placeholder="Número de tarjeta" value="" formControlName="numero_tarjeta">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-section-form">
+                        <mat-label>Número cuenta:</mat-label>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <input matInput placeholder="Número de cuenta" value="" formControlName="numero_cuenta">
+                        </mat-form-field>
+                    </div>
+                    <div class="input-section-form">
+                        <mat-label>Banco:</mat-label>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <input matInput placeholder="Nombre del banco" value="" formControlName="banco">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="button-form">
+                        <button mat-raised-button type="submit" color="primary">
+                            Guardar
+                            <mat-icon>
+                                save
+                            </mat-icon>
+                        </button>
+                    </div>
+                    <div class="button-form">
+                        <button mat-raised-button>
+                            Deshacer
+                            <mat-icon>
+                                undo
+                            </mat-icon>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+</div>

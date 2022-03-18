@@ -1,0 +1,91 @@
+<div class="main">
+    <div class="main-section">
+        <div class="acounts-section">
+            <div class="create-button-section">
+                <button mat-raised-button color="primary" (click)="WantCreate()">
+                    Crear
+                    <mat-icon>
+                        add
+                    </mat-icon>
+                </button>
+            </div>
+            <div class="cuentas-info" *ngFor="let acount of cuentas; let i = index">
+                <mat-card>
+                    <mat-card-header>
+                        {{cuentas[i]["banco"]}}
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="data-cuentas">
+                            Titular: {{cuentas[i]["titular"]}}
+                        </div>
+                        <div class="data-cuentas">
+                            Numero de cuenta: {{cuentas[i]["numero_cuenta"]}}
+                        </div>
+                        <div class="data-cuentas">
+                            Numero de tarjeta: {{cuentas[i]["numero_tarjeta"]}}
+                        </div>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <div class="card-button">
+                            <button mat-raised-button [routerLink]="['/admin/view-acount',cuentas[i]['_id']]">
+                                <mat-icon>
+                                    remove_red_eye
+                                </mat-icon>
+                            </button>
+                        </div>
+                    </mat-card-footer>
+                </mat-card>
+            </div>
+        </div>
+        <div class="cuentas-edit-section" *ngIf="wantCreate=== true">
+            <form [formGroup]="form" (ngSubmit)="SaveNewAcount()">
+                <div class="row">
+                    <div class="input-section-form">
+                        <mat-label>Titular:</mat-label>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <input matInput placeholder="Nombre del titular" value="" formControlName="titular" type="text">
+                        </mat-form-field>
+                    </div>
+                    <div class="input-section-form">
+                        <mat-label>Número tarjeta:</mat-label>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <input matInput placeholder="Número de tarjeta" value="" formControlName="numero_tarjeta">
+                        </mat-form-field>
+                    </div>
+                    <div class="input-section-form">
+                        <mat-label>Número cuenta:</mat-label>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <input matInput placeholder="Número de cuenta" value="" formControlName="numero_cuenta">
+                        </mat-form-field>
+                    </div>
+                    <div class="input-section-form">
+                        <mat-label>Banco:</mat-label>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <input matInput placeholder="Nombre del banco" value="" formControlName="banco">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="button-form">
+                        <button mat-raised-button type="submit">
+                            Guardar
+                            <mat-icon>
+                                save
+                            </mat-icon>
+                        </button>
+                    </div>
+                    <div class="button-form">
+                        <button mat-raised-button>
+                            Deshacer
+                            <mat-icon>
+                                undo
+                            </mat-icon>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>

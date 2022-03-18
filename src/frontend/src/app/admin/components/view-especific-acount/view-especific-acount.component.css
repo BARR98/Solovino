@@ -1,0 +1,84 @@
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.main-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+mat-card {
+    width: 300px;
+    height: auto;
+    font-size: 16px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    height: auto;
+    margin-top: 10px;
+}
+
+mat-card-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    color: #127475;
+    font-weight: bold;
+    background-color: #f5dfbb;
+    border-radius: 6px;
+}
+
+.content-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.content-item-title {
+    margin-right: 5px;
+    width: 120px;
+}
+
+.cuentas-edit-section {
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    border: solid #127475;
+    border-radius: 10px;
+    width: auto;
+    padding: 15px;
+}
+
+.row {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.input-section-form {
+    margin-right: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.button-form {
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+mat-label {
+    width: 120px;
+}
+
+mat-form-field {
+    width: 300px;
+}

@@ -1,0 +1,48 @@
+button {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #227c9d;
+    color: #fef9ef;
+    margin-right: 20px;
+}
+
+mat-toolbar {
+    display: flex;
+    width: 100%;
+}
+
+.logo {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.nav-bar {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+#titulo {
+    font-size: 28px;
+}
+
+.login {
+    width: 30%;
+    display: flex;
+    justify-content: right;
+}

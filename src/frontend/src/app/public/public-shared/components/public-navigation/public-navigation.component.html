@@ -1,0 +1,66 @@
+<mat-toolbar>
+    <div class="logo">
+        <div class="logo-imagen">
+            <img src="https://img.icons8.com/ios-filled/50/000000/dog-footprint.png" />
+        </div>
+        <div class="logo-titulo">
+            <span id="titulo">Huellitas</span>
+        </div>
+    </div>
+
+    <div class="nav-bar">
+
+        <div class="nav-item">
+            <button mat-raised-button routerLink="home">
+                <span class="material-icons align-middle">
+                    home
+                </span>
+                Inicio
+            </button>
+        </div>
+
+
+        <div class="nav-item">
+            <button mat-raised-button routerLink="adopcion">
+                <span class="material-icons align-middle">
+                    assignment_turned_in
+                </span>
+                Adopción
+            </button>
+        </div>
+
+        <div class="nav-item">
+            <button mat-raised-button routerLink="donaciones">
+                <span class="material-icons align-middle">
+                    attach_money
+                </span>
+                Donaciones
+            </button>
+        </div>
+
+        <div class="nav-item">
+            <button mat-raised-button routerLink="sobre-nostros">
+                <span class="material-icons align-middle">
+                    perm_identity
+                </span>
+                Sobre nosotros
+            </button>
+        </div>
+
+        <section class="login">
+            <button mat-raised-button routerLink="login">
+                <span class="material-icons align-middle">
+                    login
+                </span>
+                Iniciar sesión
+            </button>
+        </section>
+    </div>
+
+
+
+
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>

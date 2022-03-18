@@ -1,0 +1,57 @@
+<div class="main">
+    <div class="main-section">
+        <div class="info">
+            <mat-card>
+                <mat-card-header>
+                    Información Sobre La Organización
+                </mat-card-header>
+                <mat-card-content>
+                    {{info[0]["informacion"]}}
+                </mat-card-content>
+                <mat-card-footer>
+                    <div class="buttons" (click)="WantEdit()">
+                        <button mat-raised-button color="primary">
+                            Editar
+                            <mat-icon>
+                                edit
+                            </mat-icon>
+                        </button>
+                    </div>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+        <div class="form-edit-section" *ngIf="(wantEdit === true)">
+            <div class="form-title">
+                Editar la información
+            </div>
+            <form [formGroup]="form" (ngSubmit)="SaveUpdatedInfo()">
+                <div class="row">
+                    <div class="input-section-form">
+                        <mat-label>Información:</mat-label>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <textarea matInput placeholder="Información" value="" formControlName="informacion" type="text"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="button-form">
+                        <button mat-raised-button type="submit" color="primary">
+                            Guardar
+                            <mat-icon>
+                                save
+                            </mat-icon>
+                        </button>
+                    </div>
+                    <div class="button-form">
+                        <button mat-raised-button (click)="ResetForm()" type="reset">
+                            Deshacer
+                            <mat-icon>
+                                undo
+                            </mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

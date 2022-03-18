@@ -1,0 +1,107 @@
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: scroll;
+    justify-content: center;
+}
+
+.main-section {
+    width: 70%;
+    height: fit-content;
+}
+
+.table-container {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border: solid 2px #006d77;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    height: auto;
+}
+
+td {
+    text-align: center;
+}
+
+.new-post {
+    width: 200px;
+    background-color: #e29578;
+}
+
+.create-button-section {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+tr {
+    transition: background-color .5s;
+    height: 50px;
+    background-color: #d6ecf3;
+}
+
+tr:hover {
+    background-color: #ebebeb;
+}
+
+.row {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+form {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border: solid #e29578 2px;
+    border-radius: 10px;
+}
+
+.input-section-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+mat-label {
+    margin-right: 5px;
+    width: 100px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+button {
+    width: auto;
+    height: auto;
+}
+
+.buttons-form {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+span {
+    margin-right: 7px;
+}

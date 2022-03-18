@@ -1,0 +1,114 @@
+<div class="main">
+    <div class="main-section">
+        <div class="main-section-content">
+            <div class="create-button-section">
+                <button mat-raised-button color="primary" id="new-post" (click)="WantCreate()">
+                    <span>Crear</span>
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <th>Id</th>
+                        <th>Nombre de la mascota</th>
+                        <th>Ver</th>
+                    </thead>
+                    <tbody *ngFor="let post of adopcion; let i = index">
+                        <tr>
+                            <td>{{adopcion[i]["_id"]}}</td>
+                            <td>{{adopcion[i]["nombre_mascota"]}}</td>
+                            <td>
+                                <button mat-raised-button [routerLink]="['/admin/view-adopcion',adopcion[i]['_id']]">
+                                    <mat-icon>remove_red_eye</mat-icon>
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="form-section" *ngIf="wantCreate === true">
+                <form [formGroup]="form" (ngSubmit)="SaveNewAdopcion()">
+                    <div class="row">
+                        <div class="input-section-form">
+                            <mat-label>Nombre:</mat-label>
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <input matInput placeholder="Nombre de la mascota" value="" formControlName="nombre_mascota" type="text">
+                            </mat-form-field>
+                        </div>
+                        <div class="input-section-form">
+                            <mat-label>Edad:</mat-label>
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <input matInput placeholder="Edad de la mascota" value="" formControlName="edad_mascota">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-section-form">
+                            <mat-label>Aclaraciones:</mat-label>
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <textarea matInput placeholder="Aclaraciones" value="" formControlName="aclaraciones"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <div class="input-section-form">
+                            <mat-label>Sexo:</mat-label>
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <input matInput placeholder="Sexo de la mascota" value="" formControlName="sexo_mascota">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-section-form">
+                            <mat-label>Esterilización:</mat-label>
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <input matInput placeholder="Estado de esterilización de la mascota" value="" formControlName="esterilizacion">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="input-section-form">
+                            <mat-label>Raza:</mat-label>
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <input matInput placeholder="Inserte la raza" value="" formControlName="raza">
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="input-section-form">
+                            <mat-label>Imagen:</mat-label>
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <input matInput placeholder="Imagen de la mascota" value="" formControlName="imagen_mascota">
+                            </mat-form-field>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="buttons-form">
+                            <button mat-raised-button type="submit" color="primary">
+                                <span>Guardar</span>
+                                <mat-icon>save</mat-icon>
+                            </button>
+                        </div>
+
+                        <div class="buttons-form">
+                            <button mat-raised-button type="reset" color="warn">
+                                <span>Deshacer</span>
+                                <mat-icon>undo</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
